@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HW 7</title>
+</head>
+<body>
+    <script>
+        const x = Number (prompt ('Enter x'));
+        const a = Number (prompt ('Enter a'));
+        const n = Number (prompt ('Enter n'));
+
+        const leftSide = Math.pow ((x + a), n);
+
+        let k = n;
+
+        function factorial(n) {
+        return n ? n * factorial(n - 1) : 1;
+        }
+
+        let sum = 0;
+        for (k=0; k<=n; k++) {
+        let firstNumber = (factorial(n) / (factorial(k) * factorial(n - k))) * Math.pow(x, k) * Math.pow(a, (n - k));
+        sum = firstNumber + sum;
+        }
+
+        const rightSide = sum;
+
+        if (leftSide === rightSide) {
+        alert('true');
+        } else {
+        alert('false');
+        }
+    </script>
+
+</body>
+</html>
